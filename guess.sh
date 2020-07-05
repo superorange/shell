@@ -6,13 +6,8 @@ BLUE_COLOR='\E[1;34m'  #蓝
 PINK='\E[1;35m'        #粉红
 RES='\E[0m'
 startTime=`date +'%Y-%m-%d %H:%M:%S'`
-#执行程序
-
 count=0
 random_number=$RANDOM
-echo $random_number
-min=0
-max=$random_number
 echo -e "${RED_COLOR}---Auther: Tian @https://github.com/superorange \n---现在是 ${startTime}${RES}"
 echo -e "${GREEN_COLOR}---shell猜数字游戏---${RES}"
 while true;do
