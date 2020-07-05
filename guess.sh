@@ -24,7 +24,7 @@ while true;do
     elif ((${random_number}<$number));then
         echo -e "---${number}: ${BLUE_COLOR}太大了${RES}---"
     else
-        printf "---正确数字：$number"
+        echo "---正确数字：$number"
         echo "---你猜对了,你花费了${count}次"
         break 
     fi
