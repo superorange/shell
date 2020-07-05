@@ -5,10 +5,15 @@ YELOW_COLOR='\E[1;33m' #黄
 BLUE_COLOR='\E[1;34m'  #蓝
 PINK='\E[1;35m'        #粉红
 RES='\E[0m'
-timeNowLocal=`date "+%Y-%m-%d %H:%M:%S"`
+startTime=`date +'%Y-%m-%d %H:%M:%S'`
+#执行程序
+
 count=0
 random_number=$RANDOM
-echo -e "${RED_COLOR}---Auther: Tian @https://github.com/superorange \n---现在是 ${timeNowLocal}${RES}"
+echo $random_number
+min=0
+max=$random_number
+echo -e "${RED_COLOR}---Auther: Tian @https://github.com/superorange \n---现在是 ${startTime}${RES}"
 echo -e "${GREEN_COLOR}---shell猜数字游戏---${RES}"
 while true;do
     echo -ne "${PINK}>>>请输入随机整数(0~32767):${RES}"
@@ -24,8 +29,11 @@ while true;do
     elif ((${random_number}<$number));then
         echo -e "---${number}: ${BLUE_COLOR}太大了${RES}---"
     else
+        endTime=`date +'%Y-%m-%d %H:%M:%S'`
+        start_seconds=`date +%s --date="$startTime"`;
+        end_seconds=`date +%s --date="$endTime"`;
         echo "---正确数字：$number"
-        echo "---你猜对了,你花费了${count}次"
+        echo -e "---你猜对了,你花费了:${GREEN_COLOR}${count}${RES}次,耗时:${GREEN_COLOR}$((end_seconds-start_seconds))${RES}s"
         break 
     fi
 done
