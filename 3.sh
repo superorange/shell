@@ -16,5 +16,8 @@ if [ $a1 ];then
 else
     echo $((10/3))
 fi
-
+for i in 1 3 6 10 
+do
+    echo $i
+done
 
