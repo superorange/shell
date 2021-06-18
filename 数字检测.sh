@@ -13,7 +13,6 @@ while (($flag == 1)); do
     if (($? == 0)); then
         echo "是数字"
         break
-
     else
         echo "不是数字"
         continue
@@ -21,4 +20,3 @@ while (($flag == 1)); do
     echo "继续输出"
 done
 echo "over?"
-

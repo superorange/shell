@@ -5,6 +5,13 @@ if [ "$(pgrep -c "ssh")" -gt 1 ]; then
 fi
 
 if [ 1 -ne 2 ]; then
+`expr clear`
+if [ $(ps -ef | grep -c "ssh") -gt 1 ]; 
+then 
+    echo "true"
+fi
+
+if [ 1 -gt 2 ]; then
     echo "1>2"
 elif [ 2 -lt 3 ]; then
     echo "2 < 3"
@@ -31,7 +38,6 @@ until [ $i -eq 1 ]; do
     let i--
 done
 p1=9
-
 case $p1 in
 1)
     echo 1
@@ -43,7 +49,6 @@ case $p1 in
     echo default
     ;;
 esac
-
 case 1 in
 1) echo 1 ;;
 2 | 3) echo 2 or 3 ;;
